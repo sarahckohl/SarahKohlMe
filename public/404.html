@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>sarahkohl.me</title>
+    <script>
+      // GitHub Pages 404 redirect trick for single-page apps with React Router.
+      // When GitHub Pages serves a 404 (e.g. /post/my-slug), this page runs,
+      // encodes the path into the query string, and redirects to index.html.
+      // index.html then reads the query string and restores the real URL via
+      // history.replaceState before React Router mounts.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1).join('/') +
+        '/?p=' + encodeURIComponent(
+          l.pathname.slice(1) + (l.search ? '&' + l.search.slice(1) : '') + l.hash
+        )
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
