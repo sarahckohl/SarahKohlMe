@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Holy Season — Anno IVxvii e.v.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #8a6b28;
+    --crimson: #8b1a1a;
+    --deep: #070509;
+    --parchment: #f0e8d5;
+    --parchment-dim: #c4b490;
+    --silver: #9898b0;
+    --violet-light: #7b4fa0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--deep);
+    color:var(--parchment);
+    font-family:'Cormorant Garamond',serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(ellipse at 10% 0%,rgba(61,31,94,.4) 0%,transparent 45%),
+      radial-gradient(ellipse at 90% 100%,rgba(139,26,26,.2) 0%,transparent 45%);
+  }
+  body::after {
+    content:''; position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity:.35; pointer-events:none; z-index:999;
+  }
+  header { text-align:center; padding:3.5rem 1.5rem 2rem; }
+  .glyph { font-size:2.2rem; display:block; margin-bottom:1rem; animation:breathe 5s ease-in-out infinite; }
+  @keyframes breathe {
+    0%,100%{text-shadow:0 0 18px rgba(201,168,76,.25);}
+    50%{text-shadow:0 0 50px rgba(201,168,76,.7),0 0 100px rgba(123,79,160,.3);}
+  }
+  .rule { width:55%; max-width:380px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:0 auto 1.4rem; }
+  h1 { font-family:'Cinzel Decorative',serif; font-size:clamp(1.1rem,2.8vw,1.9rem); color:var(--gold); letter-spacing:.1em; line-height:1.35; margin-bottom:.5rem; text-shadow:0 0 35px rgba(201,168,76,.2); }
+  .sub { font-family:'Cinzel',serif; font-size:.72rem; letter-spacing:.3em; color:var(--silver); margin-bottom:.5rem; }
+  .tagline { font-style:italic; font-size:.95rem; color:var(--parchment-dim); opacity:.65; }
+
+  .intro-band { max-width:780px; margin:0 auto 2.5rem; padding:1.5rem 2rem; border-top:1px solid rgba(201,168,76,.15); border-bottom:1px solid rgba(201,168,76,.15); background:rgba(61,31,94,.08); text-align:center; }
+  .intro-band p { font-size:.95rem; line-height:1.8; color:var(--parchment-dim); }
+  .intro-band strong { color:var(--gold-light); font-weight:600; }
+
+  .week-nav { position:sticky; top:0; z-index:100; background:rgba(7,5,9,.97); border-bottom:1px solid rgba(201,168,76,.1); padding:.8rem 1rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem; }
+  .wk-btn { font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.15em; padding:.3rem .75rem; border:1px solid rgba(201,168,76,.25); background:transparent; color:var(--gold-dim); cursor:pointer; text-transform:uppercase; transition:all .25s; }
+  .wk-btn:hover,.wk-btn.active { background:rgba(201,168,76,.1); color:var(--gold-light); border-color:var(--gold); }
+
+  main { max-width:960px; margin:0 auto; padding:2rem 1.2rem 5rem; }
+
+  .week-heading { text-align:center; padding:2.5rem 0 1rem; position:relative; }
+  .week-heading::before { content:''; position:absolute; top:50%; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,.18),transparent); }
+  .week-label { display:inline-block; font-family:'Cinzel Decorative',serif; font-size:.65rem; letter-spacing:.3em; color:var(--gold-dim); background:var(--deep); padding:0 1.5rem; text-transform:uppercase; position:relative; }
+
+  .day-card { display:grid; grid-template-columns:90px 1fr; gap:0 1.4rem; margin-bottom:2.4rem; opacity:0; transform:translateY(16px); animation:up .55s ease forwards; }
+  @keyframes up { to{opacity:1;transform:translateY(0);} }
+  .day-card:nth-child(1){animation-delay:.05s} .day-card:nth-child(2){animation-delay:.1s}
+  .day-card:nth-child(3){animation-delay:.15s} .day-card:nth-child(4){animation-delay:.2s}
+  .day-card:nth-child(5){animation-delay:.25s} .day-card:nth-child(6){animation-delay:.3s}
+  .day-card:nth-child(7){animation-delay:.35s} .day-card:nth-child(8){animation-delay:.4s}
+
+  .day-left { display:flex; flex-direction:column; align-items:center; padding-top:.2rem; }
+  .day-month { font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.2em; color:var(--gold-dim); }
+  .day-num-big { font-family:'Cinzel Decorative',serif; font-size:2.1rem; line-height:1; color:var(--gold); text-shadow:0 0 16px rgba(201,168,76,.35); }
+  .day-weekday { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.15em; color:var(--silver); opacity:.6; margin-bottom:.6rem; }
+
+  .attr-block { width:100%; background:rgba(201,168,76,.05); border:1px solid rgba(201,168,76,.2); padding:.5rem .4rem; text-align:center; margin-bottom:.35rem; }
+  .attr-hebrew { font-size:1.4rem; color:var(--gold-light); line-height:1; display:block; margin-bottom:.2rem; }
+  .attr-trump { font-family:'Cinzel',serif; font-size:.52rem; letter-spacing:.08em; color:var(--gold); display:block; line-height:1.3; }
+  .attr-element { font-family:'Cinzel',serif; font-size:.46rem; letter-spacing:.12em; color:var(--silver); opacity:.7; display:block; margin-top:.15rem; }
+
+  .day-right { border-left:1px solid rgba(201,168,76,.12); padding-left:1.4rem; }
+  .day-title-row { display:flex; align-items:baseline; gap:.6rem; margin-bottom:.8rem; flex-wrap:wrap; }
+  .day-title { font-family:'Cinzel',serif; font-size:clamp(.85rem,2vw,1.1rem); color:var(--parchment); line-height:1.3; }
+  .day-badge { font-family:'Cinzel',serif; font-size:.52rem; letter-spacing:.18em; padding:.18rem .55rem; border:1px solid rgba(139,26,26,.6); color:#d07070; background:rgba(139,26,26,.15); text-transform:uppercase; white-space:nowrap; }
+  .day-badge.eve { border-color:rgba(61,31,94,.8); color:#a878d8; background:rgba(61,31,94,.25); }
+
+  .practices { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; }
+  .pblock { background:rgba(201,168,76,.025); border:1px solid rgba(201,168,76,.08); border-left:2px solid rgba(201,168,76,.22); padding:.8rem 1rem; }
+  .pblock.span2 { grid-column:1/-1; }
+  .plabel { font-family:'Cinzel',serif; font-size:.52rem; letter-spacing:.2em; color:var(--gold); opacity:.65; text-transform:uppercase; margin-bottom:.45rem; display:flex; align-items:center; gap:.4rem; }
+  .plabel::after { content:''; flex:1; height:1px; background:rgba(201,168,76,.12); }
+  .pcontent { font-size:.9rem; line-height:1.7; color:var(--parchment); opacity:.84; }
+  .pcontent strong { color:var(--gold-light); font-weight:600; }
+  .pcontent em { color:var(--parchment-dim); font-style:italic; }
+  .book-tag { display:inline-block; font-family:'Cinzel',serif; font-size:.62rem; padding:.15rem .55rem; border:1px solid rgba(201,168,76,.35); color:var(--gold-light); margin-top:.35rem; letter-spacing:.07em; }
+
+  @media(max-width:580px){
+    .day-card{grid-template-columns:1fr;}
+    .day-left{flex-direction:row;gap:.8rem;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;}
+    .day-right{border-left:none;border-top:1px solid rgba(201,168,76,.12);padding-left:0;padding-top:.8rem;}
+    .practices{grid-template-columns:1fr;}
+  }
+  footer { text-align:center; padding:2rem 1rem; font-size:.78rem; color:var(--silver); opacity:.35; font-style:italic; border-top:1px solid rgba(201,168,76,.06); }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="glyph">✡︎</span>
+  <div class="rule"></div>
+  <p class="sub">Anno IVxvii e.v. · March 20 – April 10, 2026</p>
+  <h1>The High Holy Season</h1>
+  <p class="tagline">From the Equinox of the Gods to the last Day of the Receiving</p>
+</header>
+
+<div class="intro-band">
+  <p>
+    Each day of the High Holy Season carries its own <strong>Hebrew letter, Tarot trump, and elemental or planetary attribution</strong>
+    drawn from the traditional Thelemic system. The prescribed reading for each day follows the
+    assigned Liber and chapter. March 20 carries two distinct workings —
+    a <strong>morning rite (TAV · Earth)</strong> and an <strong>evening rite (TAV · Saturn)</strong>.
+    The season closes on April 10 with ALEPH, The Fool — the last letter becomes the first, and the cycle begins again.
+  </p>
+</div>
+
+<nav class="week-nav">
+  <button class="wk-btn active" onclick="showAll(this)">All Days</button>
+  <button class="wk-btn" onclick="showWeek('w1',this)">Week I · Mar 20–26</button>
+  <button class="wk-btn" onclick="showWeek('w2',this)">Week II · Mar 27–Apr 2</button>
+  <button class="wk-btn" onclick="showWeek('w3',this)">Week III · Apr 3–10</button>
+  <button class="wk-btn" onclick="showHoly(this)">Holy Days Only</button>
+</nav>
+
+<main id="main">
+
+<!-- ══ WEEK I ══ -->
+<div class="week-heading" data-week="w1"><span class="week-label">✦ Week I — March 20–26 ✦</span></div>
+
+<!-- Mar 20 MORNING -->
+<div class="day-card" data-week="w1" data-holy="yes">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">20</div><div class="day-weekday">Friday</div>
+    <div class="attr-block"><span class="attr-hebrew">ת</span><span class="attr-trump">The Universe</span><span class="attr-element">TAV · Earth</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Feast for the Equinox of the Gods &amp; Supreme Ritual</span><span class="day-badge">Morning</span><span class="day-badge">High Holy</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber LXV — Cap. I.</strong> Read at dawn, facing east, before the sun clears the horizon. TAV descends into Earth — the Universe card is completion manifesting into the world. The Great Work arrives in matter.<div class="book-tag">Liber LXV · Cap. I</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · TAV</div><div class="pcontent"><strong>The Universe (XXI)</strong> — TAV, the final letter, Earth. The dancer in the oval of light, the four Kerubim at the corners. Meditate on the totality of the Work arriving into physical reality as the new year begins. Everything is complete; everything begins.<div class="book-tag">XXI · THE UNIVERSE · ת</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 TAV · Earth</div><div class="pcontent">TAV is the last letter — the seal, the cross, the completion of all paths. Earth: the world as the body of the divine, matter as sacred. Meditate on groundedness. Ask: <em>How does my True Will take form in the material world?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Morning Ritual</div><div class="pcontent">Perform the <strong>Star Ruby</strong> at sunrise. Then perform or solemnly recite <strong>Liber V vel Reguli</strong> — the Supreme Ritual of the New Aeon. Light a single white candle on a bare altar. The year begins in Earth.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 20 EVENING -->
+<div class="day-card" data-week="w1" data-holy="yes">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">20</div><div class="day-weekday">Friday</div>
+    <div class="attr-block"><span class="attr-hebrew">ת</span><span class="attr-trump">The Universe</span><span class="attr-element">TAV · Saturn</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Feast for the Equinox of the Gods — Evening Rite</span><span class="day-badge eve">Evening</span><span class="day-badge">High Holy</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. II.</strong> The same path, TAV, seen now in Saturn's light — time, limit, the great cycle, the reaper who is also the planter. Saturn is the face of the Universe card that governs time and mortality.<div class="book-tag">Liber VII · Cap. II</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · TAV</div><div class="pcontent"><strong>The Universe (XXI)</strong> — now Saturn's aspect. Where the morning rite celebrated arrival, the evening rite contemplates the eternal cycle. Saturn devours what is complete so the new may begin. The dancer spins on, season after season.<div class="book-tag">XXI · THE UNIVERSE · ת</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 TAV · Saturn</div><div class="pcontent">Saturn: limitation, time, the harvest and its end. Meditate at sunset on what the old year completed. What has been reaped? What passes away as the new cycle opens? Honour the ending before celebrating the beginning.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Evening Ritual</div><div class="pcontent">At the exact Equinox moment (14:46 UTC — adjust to local time), pause for 5–10 minutes of silent meditation. Then feast: wine, food, music. Perform <strong>Liber Resh</strong> at sunset. Let the evening be joyful.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 21 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">21</div><div class="day-weekday">Saturday</div>
+    <div class="attr-block"><span class="attr-hebrew">ש</span><span class="attr-trump">The Æon</span><span class="attr-element">SHIN · Fire</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Æon — The Fire of Horus</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber LXV — Cap. IV.</strong> SHIN is the Mother letter of Fire and the Holy Spirit — the triple flame. The Æon card is the proclamation of Horus: not the old Judgement but a new arising, fiercer and more joyful.<div class="book-tag">Liber LXV · Cap. IV</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · SHIN</div><div class="pcontent"><strong>The Æon (XX)</strong> — SHIN, Fire. Ra-Hoor-Khuit enthroned, Nuit arching above, Hadit as the winged solar disc. The New Aeon proclaimed. Contemplate what the Aeon of Horus means in your own life — what must change in you to live it fully?<div class="book-tag">XX · THE ÆON · ש</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 SHIN · Fire</div><div class="pcontent">SHIN is primal Fire — the Shekinah, the divine presence as consuming flame. Meditate on the fire that destroys the false and reveals the true. Ask: <em>What old-Aeon belief still clings to me that the fire of Horus must burn away?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Light a candle and practice <em>trataka</em> — fixed gazing on the flame — for 20 minutes. Perform <strong>Liber Resh</strong> at all four solar stations. Read the Æon card's imagery from <em>The Book of Thoth</em> in full and contemplate each figure.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 22 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">22</div><div class="day-weekday">Sunday</div>
+    <div class="attr-block"><span class="attr-hebrew">ר</span><span class="attr-trump">The Sun</span><span class="attr-element">RESH · Sun</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Sun — Ra in His Radiance</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. IV.</strong> RESH is the face — Ra, the visible solar force, the crowned and conquering child in his most radiant and unconcealed aspect. Light without shadow.<div class="book-tag">Liber VII · Cap. IV</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · RESH</div><div class="pcontent"><strong>The Sun (XIX)</strong> — RESH, Sol. The child dancing in full sunlight, the sunflowers turning, the white horse. Joy as a magical act. After the Æon's proclamation, the Sun simply shines. <em>"Success is your proof."</em><div class="book-tag">XIX · THE SUN · ר</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 RESH · Sol</div><div class="pcontent">The Sun illuminates without discrimination. Meditate outdoors in actual sunlight if possible — feel the solar force on your skin. Ask: <em>Where in my life am I withholding light — from others or from myself?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Perform <strong>Liber Resh</strong> at all four solar stations with full attention and joy. Spend time outside. This is a day of light, warmth, and celebration — let the practice be luminous and simple.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 23 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">23</div><div class="day-weekday">Monday</div>
+    <div class="attr-block"><span class="attr-hebrew">ק</span><span class="attr-trump">The Moon</span><span class="attr-element">QOPH · Pisces</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Moon — The Hidden Tides</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. VI.</strong> QOPH governs Pisces and the Moon's dark face — the path of illusion, dreams, and the unconscious tides that move beneath waking awareness.<div class="book-tag">Liber VII · Cap. VI</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · QOPH</div><div class="pcontent"><strong>The Moon (XVIII)</strong> — QOPH, Pisces. The dog and wolf howling, the crayfish rising from the depths, the twin towers at the horizon. What you see by moonlight is real — but incomplete. Trust instinct over the surface appearance.<div class="book-tag">XVIII · THE MOON · ק</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 QOPH · Pisces</div><div class="pcontent">Qoph means the back of the head — the unconscious, the dream-mind. Pisces dissolves all boundaries. Keep your dream journal open beside your bed tonight. Ask: <em>What am I not seeing clearly? Where does the illusion feel safer than the truth?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day of receptivity. Place a bowl of water on your altar. Record last night's dreams in full. Practice <strong>scrying in water</strong> — let images surface without grasping them. Perform no forceful ritual today; simply observe.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 24 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">24</div><div class="day-weekday">Tuesday</div>
+    <div class="attr-block"><span class="attr-hebrew">צ</span><span class="attr-trump">The Emperor</span><span class="attr-element">TZADDI · Aries</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Emperor — Sovereign Will</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber Tzaddi vel Hamus Hermeticus.</strong> The fishhook that draws the aspirant to the divine. TZADDI is Aries — the ram's charge, the initiating force, the sovereign will that breaks new ground before dawn.<div class="book-tag">Liber Tzaddi</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · TZADDI</div><div class="pcontent"><strong>The Emperor (IV)</strong> — TZADDI, Aries. Sovereignty and law, the will crystallised into authority. <em>Note Crowley's famous reassignment: in Liber AL "Tzaddi is not the Star" — it is The Emperor.</em> Meditate on the authority of your own True Will.<div class="book-tag">IV · THE EMPEROR · צ</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 TZADDI · Aries</div><div class="pcontent">The fishhook and the ram — one draws, one charges. Aries initiates without hesitation. Meditate on where you are called to lead, to command, to exercise sovereign responsibility. Ask: <em>Where must I stop deferring and act from my will directly?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day for decisive action. Make one firm decision you have been postponing. Perform <strong>Liber Resh</strong> at noon, facing south — full solar force. Write a declaration: one commitment you will fulfil before the season ends.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 25 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">25</div><div class="day-weekday">Wednesday</div>
+    <div class="attr-block"><span class="attr-hebrew">פ</span><span class="attr-trump">The Tower</span><span class="attr-element">PEH · Mars</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Tower — The Grace of Destruction</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. I.</strong> PEH is the mouth — the word that strikes like lightning. Mars delivers the divine thunderbolt. What the Tower destroys was always built on false ground; its fall is a mercy.<div class="book-tag">Liber VII · Cap. I</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · PEH</div><div class="pcontent"><strong>The Tower (XVI)</strong> — PEH, Mars. The lightning-struck tower, the crown blown off, figures falling. Do not fear this card: in Thelema the Tower's destruction is grace. The false self must be shattered for the true will to emerge.<div class="book-tag">XVI · THE TOWER · פ</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 PEH · Mars</div><div class="pcontent">Peh — the mouth, the spoken word — holds the power of creation and destruction equally. Mars: force, the sword, purification by violence. Meditate on one false structure in your life that the lightning of truth should rightly strike.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Perform the <strong>Star Ruby</strong> with deliberate ferocity — this is the Martian banishing. Physical exercise is appropriate. Write one fixed false belief, then argue against it forcefully in writing for 10 minutes. Let the Tower fall.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 26 -->
+<div class="day-card" data-week="w1">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">26</div><div class="day-weekday">Thursday</div>
+    <div class="attr-block"><span class="attr-hebrew">ע</span><span class="attr-trump">The Devil</span><span class="attr-element">A'AYIN · Capricorn</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Pan — The All-Begetter</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber A'ash vel Capricorni Pneumatici.</strong> The mystery of the generative force, Capricorn, and the phallus of Pan. A'ayin means eye — to see the divine in the vital and the animal. Read without shame or flinching.<div class="book-tag">Liber A'ash</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · A'AYIN</div><div class="pcontent"><strong>The Devil (XV)</strong> — A'AYIN, Capricorn. In Thoth: Pan Pangenetor, the total affirmation of all life and generation. Not evil — the sacred animal force, the eye that sees all without judgment. The life force itself.<div class="book-tag">XV · THE DEVIL · ע</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 A'AYIN · Capricorn</div><div class="pcontent">A'ayin — the Eye, creative vision, the seeing that does not condemn. Capricorn: the mountain-climbing goat-fish. Meditate on your own vital force. Ask: <em>Where do I suppress my life energy out of fear or social convention?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Recite <strong>Crowley's Hymn to Pan</strong> aloud with full voice and abandon. Dance, move, be fully alive. Then sit in absolute stillness for 15 minutes — the silence at the roaring heart of Pan.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WEEK II ══ -->
+<div class="week-heading" data-week="w2"><span class="week-label">✦ Week II — March 27 – April 2 ✦</span></div>
+
+<!-- Mar 27 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">27</div><div class="day-weekday">Friday</div>
+    <div class="attr-block"><span class="attr-hebrew">ס</span><span class="attr-trump">Art</span><span class="attr-element">SAMEKH · Sagittarius</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Art — The Alchemical Marriage</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber ARARITA — Cap. VII.</strong> SAMEKH is the prop, the spine, the support — the arrow of Sagittarius aimed at truth. Art (Temperance in older decks) is the synthesis of all opposites: the central work of alchemy.<div class="book-tag">Liber ARARITA · Cap. VII</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · SAMEKH</div><div class="pcontent"><strong>Art (XIV)</strong> — SAMEKH, Sagittarius. The androgynous figure pours fire and water simultaneously between two vessels — the sacred marriage of opposites completed. The rainbow above, the sun and moon dissolved into each other. The Great Work in process.<div class="book-tag">XIV · ART · ס</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 SAMEKH · Sagittarius</div><div class="pcontent">The arrow of aspiration — Samekh supports the spine, the central column. Sagittarius aims high and far. Meditate on the aspiration itself, not the goal. This longing toward the divine is already the divine reaching for itself.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Perform <strong>Liber Samekh</strong> (the Bornless Ritual) — the supreme invocation of the HGA on this path. Then practice the <strong>Middle Pillar Exercise</strong>, feeling the central column of light from crown to earth.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 28 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">28</div><div class="day-weekday">Saturday</div>
+    <div class="attr-block"><span class="attr-hebrew">נ</span><span class="attr-trump">Death</span><span class="attr-element">NUN · Scorpio</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Death — Scorpion, Serpent, Eagle</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber Arcanorum.</strong> NUN is the fish — life swimming in the waters of the deep unconscious. Scorpio rules sex, death, and the great transformation. Liber Arcanorum reveals the Tarot's mysteries at their most fundamental level.<div class="book-tag">Liber Arcanorum</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · NUN</div><div class="pcontent"><strong>Death (XIII)</strong> — NUN, Scorpio. Three faces: the scorpion that stings, the serpent that sheds its skin, the eagle that soars above. In Thelema death is a change of vehicle, not an ending. What in you is being reborn right now?<div class="book-tag">XIII · DEATH · נ</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 NUN · Scorpio</div><div class="pcontent">Nun — the fish — swims unseen beneath the surface. What transformation is occurring below your conscious awareness? Scorpio forces the hidden into light. Sit with the discomfort of the chrysalis. The darkness before emergence is not failure.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Write what must die for your True Will to fully live. Burn the list ceremonially. Meditate on Scorpio's three faces: which are you now — the scorpion, the serpent, or the eagle? Record honestly in your magical diary.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 29 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">29</div><div class="day-weekday">Sunday</div>
+    <div class="attr-block"><span class="attr-hebrew">מ</span><span class="attr-trump">The Hanged Man</span><span class="attr-element">MEM · Water</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Hanged Man — Voluntary Surrender</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber LXV — Cap. III.</strong> MEM is the Mother letter of Water — the great sea, dissolution, and the grace of surrender. The Hanged Man does not struggle. His inversion is voluntary, and it reveals what the upright view cannot see.<div class="book-tag">Liber LXV · Cap. III</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · MEM</div><div class="pcontent"><strong>The Hanged Man (XII)</strong> — MEM, Water. Suspended by one foot, a halo of golden light around his head, perfectly calm. The sacrifice is chosen. The reversal of perspective is the gift itself. What looks like defeat is the highest act of will.<div class="book-tag">XII · THE HANGED MAN · מ</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 MEM · Water</div><div class="pcontent">Water flows, dissolves, and finds the lowest place — and thus pervades everything. MEM is primal water, the sea before form. Ask: <em>What would I see if I released my current perspective entirely and let myself be inverted?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day of voluntary restriction. Fast one meal, or observe silence for one hour. Place a bowl of water on your altar. Lie on the floor, head south, for 20 minutes of formless meditation. Let the body become heavy. Float.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 30 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">30</div><div class="day-weekday">Monday</div>
+    <div class="attr-block"><span class="attr-hebrew">ל</span><span class="attr-trump">Adjustment</span><span class="attr-element">LAMED · Libra</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Adjustment — Truth as a Blade</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber Libræ — The Book of the Balance.</strong> LAMED is the oxgoad — the instrument of correction, the prod that keeps the work moving true. Libra weighs all things with exact precision. One of the most foundational ethical texts in Thelema.<div class="book-tag">Liber Libræ</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · LAMED</div><div class="pcontent"><strong>Adjustment (VIII)</strong> — LAMED, Libra. The goddess balanced on her toes, the sword upraised, the scales exact. Truth is not merciful — it is precise. Every action returns its exact consequence. Nothing is lost or added.<div class="book-tag">VIII · ADJUSTMENT · ל</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 LAMED · Libra</div><div class="pcontent">Lamed — the oxgoad, the correcting touch. Libra weighs without sentiment. Meditate on where you are out of balance in work, in relationships, in your practice. What does exact adjustment require of you right now?</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Perform the <strong>Middle Pillar Exercise</strong> with attention to perfect central balance. Then honestly name one area where you have been dishonest with yourself. Write it plainly, without mitigation. The Adjustment card does not flinch.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mar 31 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">March</div><div class="day-num-big">31</div><div class="day-weekday">Tuesday</div>
+    <div class="attr-block"><span class="attr-hebrew">כ</span><span class="attr-trump">Fortune</span><span class="attr-element">KAPH · Jupiter</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Fortune — Jupiter Turns the Wheel</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. III.</strong> KAPH is the palm of the hand — the capacity to grasp or to release with equal ease. Jupiter turns the wheel with divine generosity. The cycle of expansion and contraction is itself a holy rhythm.<div class="book-tag">Liber VII · Cap. III</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · KAPH</div><div class="pcontent"><strong>Fortune (X)</strong> — KAPH, Jupiter. The great wheel: Sphinx at the summit, Typhon descending, Hermanubis rising. The three alchemical principles turning at the hub. Meditate on the cycle you are currently within — rising, falling, or at the still point?<div class="book-tag">X · FORTUNE · כ</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 KAPH · Jupiter</div><div class="pcontent">Jupiter: abundance, expansion, the benevolent cosmic force. Kaph — the open hand — gives and receives with equal grace. Meditate on cycles: your life's larger arc. Where are you on the great wheel? What does this moment on the cycle ask of you?</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day of generosity — give something freely. Perform a <strong>Jupiter invocation</strong> (Orphic Hymn to Zeus). Then meditate on the hub at the centre of the wheel: the still point that does not turn, around which all cycles revolve.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 1 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">1</div><div class="day-weekday">Wednesday</div>
+    <div class="attr-block"><span class="attr-hebrew">י</span><span class="attr-trump">The Hermit</span><span class="attr-element">YOD · Virgo</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Hermit — The Lamp in the Dark</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. V.</strong> YOD is the primal point — the creative spark, the divine seed, the first letter concealed within all other letters. The Hermit carries the light of the highest in the darkness of the lower world.<div class="book-tag">Liber VII · Cap. V</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · YOD</div><div class="pcontent"><strong>The Hermit (IX)</strong> — YOD, Virgo. The solitary figure at the mountain's summit, the lamp held high. In Thoth: Persephone's wheat, the serpent of wisdom coiling upward. The light is held for others — but the path must be walked alone.<div class="book-tag">IX · THE HERMIT · י</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 YOD · Virgo</div><div class="pcontent">Yod — the hand, the primal point, the seed of all the Hebrew letters. Virgo: discernment, purity, the virgin soil. The Hermit is alone because initiation cannot be walked for another. Ask: <em>What light do I carry that no one else can carry for me?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day of solitude and study. Spend at least one hour completely alone, without devices. Light a single lamp in a darkened room and meditate on the HGA's inner flame for 30 minutes. Record what arises without editing.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 2 -->
+<div class="day-card" data-week="w2">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">2</div><div class="day-weekday">Thursday</div>
+    <div class="attr-block"><span class="attr-hebrew">ט</span><span class="attr-trump">Lust</span><span class="attr-element">TETH · Leo</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of Lust — Babalon Rides the Beast</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber Stellæ Rubeæ.</strong> TETH is the serpent — the Kundalini, the lion-serpent of Leo. Babalon rides the Beast: not domination but sacred union, love commanding the raw force of life itself. Lust is not appetite — it is divine intoxication.<div class="book-tag">Liber Stellæ Rubeæ</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · TETH</div><div class="pcontent"><strong>Lust (XI)</strong> — TETH, Leo. Babalon, radiant and unashamed, rides the seven-headed Beast and raises the Holy Grail. The lion-serpent is tamed not by force but by love. This is the strength that only love commands.<div class="book-tag">XI · LUST · ט</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 TETH · Leo</div><div class="pcontent">Teth — the serpent, coiled power, the Kundalini at the base of the spine. Leo roars with solar courage and creative force. Ask: <em>What vital or creative force within me is waiting to be channelled rather than suppressed?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">A day of vital and creative power. Make art, move vigorously, express something long held back. Invoke Babalon. Practice <strong>pranayama</strong> to awaken the serpent fire. Be magnificent and unapologetic.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WEEK III ══ -->
+<div class="week-heading" data-week="w3"><span class="week-label">✦ Week III — April 3–10 ✦</span></div>
+
+<!-- Apr 3 -->
+<div class="day-card" data-week="w3">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">3</div><div class="day-weekday">Friday</div>
+    <div class="attr-block"><span class="attr-hebrew">ח</span><span class="attr-trump">The Chariot</span><span class="attr-element">CHETH · Cancer</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Chariot — The Grail Bearer</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber Cheth vel Vallum Abiegni.</strong> CHETH is the fence — the enclosure, the womb, the sacred vessel that protects what is holy while it develops. The Charioteer carries the Holy Grail across the Abyss.<div class="book-tag">Liber Cheth</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · CHETH</div><div class="pcontent"><strong>The Chariot (VII)</strong> — CHETH, Cancer. The armoured charioteer, the Holy Grail emblazoned on his chest, the four Kerubim pulling in four directions. He steers not with hands but with will alone. The vehicle of the Great Work in motion.<div class="book-tag">VII · THE CHARIOT · ח</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 CHETH · Cancer</div><div class="pcontent">Cheth — the fence, the protected enclosure — guards what is sacred while it grows. Cancer: the shell, the womb, the tidal nurturing force. Ask: <em>What in my life is in a tender stage of development, requiring protection rather than exposure right now?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Consecrate a vessel — a cup or chalice — as the Holy Grail upon your altar. Meditate on yourself as the vehicle through which the Great Work moves. What sacred charge are you carrying? Record it in your magical diary.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 4 -->
+<div class="day-card" data-week="w3">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">4</div><div class="day-weekday">Saturday</div>
+    <div class="attr-block"><span class="attr-hebrew">ז</span><span class="attr-trump">The Lovers</span><span class="attr-element">ZAYIN · Gemini</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Lovers — The Sword of Discernment</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber LXV — Cap. II.</strong> ZAYIN is the sword — discrimination, the precise cutting of the false from the true. Gemini: the twins, the dual nature united. In Thoth, The Lovers is not romance but the alchemical royal marriage.<div class="book-tag">Liber LXV · Cap. II</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · ZAYIN</div><div class="pcontent"><strong>The Lovers (VI)</strong> — ZAYIN, Gemini. The Hermit above blesses the royal marriage of dark and fair below; the sword of discrimination hangs between them. True union requires first the blade — the discernment of what truly belongs together.<div class="book-tag">VI · THE LOVERS · ז</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 ZAYIN · Gemini</div><div class="pcontent">Zayin — the sword, the power of choosing. Gemini holds two natures simultaneously without collapsing either. Meditate on the pairs of opposites within you. Ask: <em>What inner union is seeking completion — and what sword of discernment must precede it?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Hold two opposing qualities in meditation — strength and tenderness, knowing and not-knowing — without resolving the tension. Let them coexist. Write about what you find in the charged space between them.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 5 -->
+<div class="day-card" data-week="w3">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">5</div><div class="day-weekday">Sunday</div>
+    <div class="attr-block"><span class="attr-hebrew">ו</span><span class="attr-trump">The Hierophant</span><span class="attr-element">VAV · Taurus</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Hierophant — The Inner Transmission</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber LXV — Cap. V.</strong> VAV is the nail — the link, the connector between above and below. Taurus: the earth-force, the bull, the body as sacred instrument of the spirit. The Hierophant transmits what cannot be written.<div class="book-tag">Liber LXV · Cap. V</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · VAV</div><div class="pcontent"><strong>The Hierophant (V)</strong> — VAV, Taurus. Seated between the pillars, the triple cross raised, two acolytes receiving the teaching. In Thoth: Osiris enthroned, the secret flame passed from initiate to initiate. The outer form points to an inner reality that must be directly experienced.<div class="book-tag">V · THE HIEROPHANT · ו</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 VAV · Taurus</div><div class="pcontent">Vav — the nail, the connector, the hook holding the veil of the sanctuary in place. Taurus: patient, earthed, accumulating force slowly. Meditate on the transmission you have received — from teachers, lineage, direct experience. What have you truly been given?</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Honour your lineage — write a brief acknowledgement of those who transmitted the flame to you. Then sit in 30 minutes of receptive silence, without technique. Let the inner teacher speak without being summoned.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 6 -->
+<div class="day-card" data-week="w3">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">6</div><div class="day-weekday">Monday</div>
+    <div class="attr-block"><span class="attr-hebrew">ה</span><span class="attr-trump">The Star</span><span class="attr-element">HEH · Aquarius</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Star — Nuit Unveiled</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber ARARITA — Cap. 6.</strong> HEH is the window — the opening onto the infinite. Aquarius pours the waters of consciousness freely upon the world. The Star is Nuit in her most intimate aspect: the infinite body of stars, pouring herself out without reserve.<div class="book-tag">Liber ARARITA · Cap. 6</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · HEH</div><div class="pcontent"><strong>The Star (XVII)</strong> — HEH, Aquarius. The naked goddess kneeling at the pool, pouring the waters of life between vessel and earth, the great star blazing above with seven lesser stars. Nuit at her most intimate. She pours without possessing, gives without reserve.<div class="book-tag">XVII · THE STAR · ה</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 HEH · Aquarius</div><div class="pcontent">Heh — the window, opened onto limitless space. Aquarius pours without possessing. Meditate under the actual night sky if possible. Feel yourself as one star among infinite stars, each moving in its own perfect orbit. <em>"Every man and every woman is a star."</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Perform the <strong>Nuit invocation</strong> from Liber AL Chapter I outdoors after dark — arms raised, head back, facing the sky. Then lie on your back for 20 minutes gazing at the stars. Feel the boundlessness of Nuit as your own nature.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 7 -->
+<div class="day-card" data-week="w3">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">7</div><div class="day-weekday">Tuesday</div>
+    <div class="attr-block"><span class="attr-hebrew">ד</span><span class="attr-trump">The Empress</span><span class="attr-element">DALETH · Venus</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Day of the Empress — Preparing the Vessel</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading</div><div class="pcontent"><strong>Liber VII — Cap. 7.</strong> DALETH is the door — the gateway through which divine abundance flows into the world. Venus: beauty, love, the creative feminine principle overflowing into form. This is the eve of the Three Days; we prepare the vessel.<div class="book-tag">Liber VII · Cap. 7</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · DALETH</div><div class="pcontent"><strong>The Empress (III)</strong> — DALETH, Venus. Crowned with stars, the dove and sparrow at her feet, the shield of the pelican, wheat and lotus in full bloom. She is abundance made embodied — the love that creates rather than merely desires.<div class="book-tag">III · THE EMPRESS · ד</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 DALETH · Venus</div><div class="pcontent">Daleth — the door — is the opening through which the higher flows into the lower world. Venus beautifies and harmonises all she touches. This is the final day of preparation before the Receiving. Ask: <em>Am I ready — body, mind, and will — to receive what comes?</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual &amp; Meditation</div><div class="pcontent">Prepare your sacred space for the Three Days. Clean and beautify your altar, bring flowers, light rose or sandalwood incense, arrange your tools with care. This is Venus's work — making the vessel beautiful before the divine descends into it.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 8 — 1st Day of the Writing -->
+<div class="day-card" data-week="w3" data-holy="yes">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">8</div><div class="day-weekday">Wednesday</div>
+    <div class="attr-block"><span class="attr-hebrew">ג</span><span class="attr-trump">The Priestess</span><span class="attr-element">GIMEL · Moon</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">First Day of the Writing — Liber AL, Cap. I · Nuit</span><span class="day-badge">High Holy</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading — at Noon</div><div class="pcontent"><strong>Liber L. (AL) — Cap. I · The Voice of Nuit.</strong> Read the entire chapter aloud at noon, solemnly. Begin: <em>"Had! The manifestation of Nuit."</em> GIMEL — the High Priestess, the Moon — is the silver thread connecting Kether to Tiphareth. Nuit is the infinite body of stars; this chapter is her voice.<div class="book-tag">Liber L. · Cap. I (Nuit)</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · GIMEL</div><div class="pcontent"><strong>The Priestess (II)</strong> — GIMEL, Moon. She sits veiled before the sanctuary, the scroll of the Law in her hands — unread by the profane. Today she reveals her scroll. The silver thread between the supernal and the beautiful below becomes the voice of Nuit herself.<div class="book-tag">II · THE PRIESTESS · ג</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 GIMEL · Moon</div><div class="pcontent">Gimel — the camel crossing the desert of the Abyss, carrying the water of life. The Moon reflects the highest light into the darkness below. Meditate on Nuit as infinite receptivity — she contains all, excludes nothing. <em>"Every man and every woman is a star."</em></div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual</div><div class="pcontent">Light frankincense at noon. Face east. Read Chapter I completely and solemnly. Then sit in 20 minutes of silence. Write in your magical diary the one verse that struck deepest — and why it speaks directly to your life right now.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 9 — 2nd Day of the Writing -->
+<div class="day-card" data-week="w3" data-holy="yes">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">9</div><div class="day-weekday">Thursday</div>
+    <div class="attr-block"><span class="attr-hebrew">ב</span><span class="attr-trump">The Magus</span><span class="attr-element">BETH · Mercury</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Second Day of the Writing — Liber AL, Cap. II · Hadit</span><span class="day-badge">High Holy</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading — at Noon</div><div class="pcontent"><strong>Liber L. (AL) — Cap. II · The Voice of Hadit.</strong> Read at noon. Begin: <em>"Nu! the hiding of Hadit."</em> BETH — the Magus, Mercury, Thoth himself — is the Logos, the Word. Hadit is the inmost point of consciousness: the secret flame that burns in every heart.<div class="book-tag">Liber L. · Cap. II (Hadit)</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · BETH</div><div class="pcontent"><strong>The Magus (I)</strong> — BETH, Mercury. Thoth juggles the four elemental weapons, surrounded by symbols of creation and illusion. The Magus speaks the Word that creates — and knows the Word to be both absolutely true and perfectly illusory simultaneously.<div class="book-tag">I · THE MAGUS · ב</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 BETH · Mercury</div><div class="pcontent">Beth — the house where the Word is spoken. Mercury carries the message between all worlds without distortion. Meditate on Hadit as your own inmost nature: <em>"I am the flame that burns in every heart of man, and in the core of every star."</em> Feel this as your own truth.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Ritual</div><div class="pcontent">Light a red candle at noon — the flame of Hadit. After the reading, practice <em>trataka</em> on the flame for 15 minutes: let awareness contract to a single point of pure consciousness. Record the experience fully in your magical diary.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Apr 10 — 3rd Day of the Writing -->
+<div class="day-card" data-week="w3" data-holy="yes">
+  <div class="day-left">
+    <div class="day-month">April</div><div class="day-num-big">10</div><div class="day-weekday">Friday</div>
+    <div class="attr-block"><span class="attr-hebrew">א</span><span class="attr-trump">The Fool</span><span class="attr-element">ALEPH · Air</span></div>
+  </div>
+  <div class="day-right">
+    <div class="day-title-row"><span class="day-title">Third Day of the Writing — Liber AL, Cap. III · Heru-Ra-Ha</span><span class="day-badge">High Holy</span></div>
+    <div class="practices">
+      <div class="pblock"><div class="plabel">📖 Reading — at Noon</div><div class="pcontent"><strong>Liber L. (AL) — Cap. III · The Voice of Heru-Ra-Ha.</strong> Read at noon with full force. Begin: <em>"Abrahadabra! the reward of Ra Hoor Khut."</em> ALEPH — The Fool, Air — is zero, the void, pure spirit before manifestation. Yet it receives the fiercest, most commanding voice of all. The last letter holds the first word.<div class="book-tag">Liber L. · Cap. III (Heru-Ra-Ha)</div></div></div>
+      <div class="pblock"><div class="plabel">🃏 Tarot · ALEPH</div><div class="pcontent"><strong>The Fool (0)</strong> — ALEPH, Air. The Fool leaps from the precipice — empty, fearless, ready for all. ALEPH closes the season as it opened the tradition: the end returns to the beginning. Having traversed every path, the initiate becomes the Fool again — but knowingly so.<div class="book-tag">0 · THE FOOL · א</div></div></div>
+      <div class="pblock"><div class="plabel">🌳 ALEPH · Air</div><div class="pcontent">Aleph — the ox, the primal breath, the first and the zero simultaneously. Air is the medium through which Ra-Hoor-Khuit's thunder moves. We return to pure potential — but now we know the path we have walked. The cycle is complete; the cycle begins.</div></div>
+      <div class="pblock"><div class="plabel">🕯 Closing Rite of the Season</div><div class="pcontent">After the noon reading, perform the <strong>Star Ruby</strong> as the closing banishing of the entire season. Then stand before your altar and speak aloud — without a script — a clear, direct statement of your True Will as you understand it today. Be fierce. Be joyful. <em>Love is the law, love under will.</em></div></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  ✦ &nbsp; Do what thou wilt shall be the whole of the Law &nbsp; ✦<br><br>
+  Trump and path attributions drawn directly from source material.<br>
+  Libri cited: LXV, VII, L. (AL), Tzaddi, A'ash, ARARITA, Arcanorum, Libræ, Stellæ Rubeæ, Cheth, Samekh.<br><br>
+  Anno IVxvii e.v.
+</footer>
+
+<script>
+  function showAll(btn) {
+    document.querySelectorAll('.day-card,.week-heading').forEach(el=>el.style.display='');
+    setActive(btn);
+  }
+  function showWeek(week,btn) {
+    document.querySelectorAll('.day-card').forEach(el=>{ el.style.display=el.dataset.week===week?'':'none'; });
+    document.querySelectorAll('.week-heading').forEach(el=>{ el.style.display=el.dataset.week===week?'':'none'; });
+    setActive(btn);
+  }
+  function showHoly(btn) {
+    document.querySelectorAll('.day-card').forEach(el=>{ el.style.display=el.dataset.holy==='yes'?'':'none'; });
+    document.querySelectorAll('.week-heading').forEach(el=>el.style.display='none');
+    setActive(btn);
+  }
+  function setActive(btn) {
+    document.querySelectorAll('.wk-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
