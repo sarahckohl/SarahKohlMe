@@ -1,8 +1,7 @@
-// hooks/usePosts.js — reusable data-fetching hook
 import { useState, useEffect } from "react";
 import { getPosts } from "../api";
 
-export function usePosts(page = 1) {
+export function usePosts(page = 1, categorySlug = null) {
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -11,7 +10,7 @@ export function usePosts(page = 1) {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    getPosts({ page })
+    getPosts({ page, categorySlug })
       .then(({ posts, totalPages }) => {
         if (!cancelled) {
           setPosts(posts);
@@ -26,7 +25,7 @@ export function usePosts(page = 1) {
         }
       });
     return () => { cancelled = true; };
-  }, [page]);
+  }, [page, categorySlug]);
 
   return { posts, totalPages, loading, error };
 }
