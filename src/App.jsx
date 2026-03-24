@@ -9,6 +9,7 @@ export default function App() {
     <BrowserRouter>
       <Nav />
       <main>
+        <b>Test?</b>
         <Routes>
           <Route path="/"        element={<PostList />} />
           <Route path="/post/:slug" element={<PostSingle />} />

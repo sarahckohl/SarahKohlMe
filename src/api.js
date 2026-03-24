@@ -1,5 +1,5 @@
 // api.js — all WordPress REST API calls live here
-const WP_BASE = "https://sarahkohl.me/wp-json/wp/v2";
+const WP_BASE = "https://public-api.wordpress.com/wp/v2/sites/sarahkohl.me";//"https://sarahkohl.me/wp-json/wp/v2";
 
 export async function getPosts({ page = 1, perPage = 10 } = {}) {
   const res = await fetch(
