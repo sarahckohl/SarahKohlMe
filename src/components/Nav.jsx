@@ -5,6 +5,7 @@ const sections = [
   { path: "/music",   label: "Music"   },
   { path: "/coding",  label: "Coding"  },
   { path: "/reviews", label: "Reviews" },
+  { path: "/high-holy-season", label: "High Holy Season 2026" }
 ];
 
 export default function Nav() {
