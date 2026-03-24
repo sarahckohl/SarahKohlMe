@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer>
-      ✦ &nbsp; Do what thou wilt shall be the whole of the Law &nbsp; ✦
+      ✦ &nbsp; 93 93/93 &nbsp; ✦
       <br />
-      <span style={{ opacity: .5 }}>Love is the law, love under will.</span>
+      <span style={{ opacity: .5 }}>© MMXXVI e.v. Sarah Kohl</span>
     </footer>
   );
 }

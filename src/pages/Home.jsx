@@ -38,8 +38,8 @@ export default function Home() {
         <span className="hero-glyph">𓅓</span>
         <div className="rule" />
         <h1>Sarah Kohl</h1>
-        <p className="sub">Tulsa, Oklahoma &nbsp;·&nbsp; Anno IVxvii e.v.</p>
-        <p className="law">Do what thou wilt shall be the whole of the Law.</p>
+        <p className="sub">Tulsa, Oklahoma</p>
+        <p className="law">Sarah's Sanctum</p>
 
         <div className="hero-bio">
           I'm Sarah — a nurse, musician, computer programmer, and practicing
