@@ -278,7 +278,8 @@ export default function HighHolySeason() {
     return !prev || prev.week !== week;
   };
 
-  return (
+  return "See you in 2027!"
+  (
     <>
       <style>{`
         .hhs-header { text-align:center; padding:3rem 1.5rem 1.5rem; }
