@@ -4,7 +4,6 @@ import Footer     from "./components/Footer";
 import Home       from "./pages/Home";
 import PostFeed   from "./pages/PostFeed";
 import PostSingle from "./pages/PostSingle";
-import HighHolySeason from "./pages/HighHolySeason";
 
 const feeds = [
   {
@@ -47,7 +46,6 @@ export default function App() {
           <Route key={path} path={`/${path}`} element={<PostFeed {...props} />} />
         ))}
         <Route path="/post/:slug" element={<PostSingle />} />
-        <Route path="/high-holy-season" element={<HighHolySeason />} />
       </Routes>
       <Footer />
     </BrowserRouter>
