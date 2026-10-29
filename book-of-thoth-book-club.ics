@@ -1,0 +1,542 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Book of Thoth Book Club//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Book of Thoth Book Club
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:thoth-bookclub-01@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261021T203000
+DTEND;TZID=America/New_York:20261021T220000
+SUMMARY:Book of Thoth Book Club #1 (pp. 3-12)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 3-12\n\nPart I: The Theory of the Tarot\nI:\nThe
+  Contents of the Tarot\nThe Origin of the Tarot\nThe Theory of the Corresp
+ ondences of the Tarot\nThe Evidence for the Initiated Traditions of the Ta
+ rot\nSummary of the Questions Hitherto Discussed\n\nZoom: https://us06web.
+ zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 85
+ 8 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-02@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261028T203000
+DTEND;TZID=America/New_York:20261028T220000
+SUMMARY:Book of Thoth Book Club #2 (pp. 12-18)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 12-18\n\nII:\nThe Tarot and the Holy Qabalah\n"T
+ he Naples Arrangement"\nThe Tarot and the Formula of Tetragrammaton\n\nZoo
+ m: https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-03@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261104T203000
+DTEND;TZID=America/New_York:20261104T220000
+SUMMARY:Book of Thoth Book Club #3 (pp. 18-25)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 18-25\n\nII (continued):\nThe Tarot and the Elem
+ ents\nThe Twenty-Two Keys\, Atu\, or Trumps of the Tarot\n\nZoom: https://
+ us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeetin
+ g ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-04@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261111T203000
+DTEND;TZID=America/New_York:20261111T220000
+SUMMARY:Book of Thoth Book Club #4 (pp. 25-34)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 25-34\n\nIII:\nThe Tarot and the Universe\nTheor
+ ies of the Ancients\nThe Tree of Life\nThe Naples Arrangement\n\nZoom: htt
+ ps://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nM
+ eeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-05@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261118T203000
+DTEND;TZID=America/New_York:20261118T220000
+SUMMARY:Book of Thoth Book Club #5 (pp. 34-43)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 34-43\n\nIII (continued):\nThe Tarot and the Tre
+ e of Life\nThe Atu of Tahuti\nThe Roman Numbers of the Trumps\nThe Tarot a
+ nd Magick\n\nZoom: https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0b
+ a2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-06@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261125T203000
+DTEND;TZID=America/New_York:20261125T220000
+SUMMARY:Book of Thoth Book Club #6 (pp. 43-48)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 43-48\n\nIII (continued):\nThe Shemhamphorasch a
+ nd the Tarot\nThe Tarot and Ceremonial Magick\nThe Tarot and Animism\nThe 
+ Cards of the Tarot as Living Beings\n\nZoom: https://us06web.zoom.us/j/858
+ 27939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\n
+ Passcode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-07@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261202T203000
+DTEND;TZID=America/New_York:20261202T220000
+SUMMARY:Book of Thoth Book Club #7 (pp. 49-60)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 49-60\n\nPart Two: The Atu\nII\nO. The Fool\nThe
+  Formula of Tetragrammaton\nThe "Green Man" of the Spring Festival. "April
+  Fool." The Holy Ghost.\nThe "Great Fool" of the Celts (Dalua)\n"The Rich 
+ Fisherman": Percivale\nThe Crocodile (Mako\, son of Sel\; or Sebek).\n\nZo
+ om: https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GB
+ fk.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-08@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261216T203000
+DTEND;TZID=America/New_York:20261216T220000
+SUMMARY:Book of Thoth Book Club #8 (pp. 60-72)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 60-72\n\nO. The Fool (continued)\nHoor-Paar-Kraa
+ t\nZeus Arrhenothelus\nDionysus Zagreus. Bacchus Diphues\nBaphomet\nSummar
+ y\n1. The Juggler\n\nZoom: https://us06web.zoom.us/j/85827939250?pwd=77PUT
+ YDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-09@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20261230T203000
+DTEND;TZID=America/New_York:20261230T220000
+SUMMARY:Book of Thoth Book Club #9 (pp. 72-78)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 72-78\n\nII. The High Priestess\nDust Devils\nTh
+ e Oyster\nIII. The Empress\nIV. The Emperor\n\nZoom: https://us06web.zoom.
+ us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 279
+ 3 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-10@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270106T203000
+DTEND;TZID=America/New_York:20270106T220000
+SUMMARY:Book of Thoth Book Club #10 (pp. 78-88)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 78-88\n\nV. The Hierophant\nVI. The Lovers\nVII.
+  The Chariot\nVIII. Adjustment\n\nZoom: https://us06web.zoom.us/j/85827939
+ 250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPassc
+ ode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-11@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270113T203000
+DTEND;TZID=America/New_York:20270113T220000
+SUMMARY:Book of Thoth Book Club #11 (pp. 88-99)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 88-99\n\nIX. The Hermit\nX. Fortune\nXI. Lust\nW
+ aratah-Blossom\nXII. The Hanged Man\n\nZoom: https://us06web.zoom.us/j/858
+ 27939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\n
+ Passcode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-12@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270120T203000
+DTEND;TZID=America/New_York:20270120T220000
+SUMMARY:Book of Thoth Book Club #12 (pp. 99-111)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 99-111\n\nXIII. Death\nXIV. Art\nXV. The Devil\n
+ XVI. The Tower (or war)\nXVII. The Star\n\nZoom: https://us06web.zoom.us/j
+ /85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 92
+ 50\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-13@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270127T203000
+DTEND;TZID=America/New_York:20270127T220000
+SUMMARY:Book of Thoth Book Club #13 (pp. 111-119)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 111-119\n\nXVIII. The Moon\nXIX. The Sun\nXX. Th
+ e Aeon\nXXI. The Universe\n\nZoom: https://us06web.zoom.us/j/85827939250?p
+ wd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode: 
+ 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-14@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270203T203000
+DTEND;TZID=America/New_York:20270203T220000
+SUMMARY:Book of Thoth Book Club #14 (pp. 120-128)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 120-128\n\nThe Fool\n\nZoom: https://us06web.zoo
+ m.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2
+ 793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-15@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270210T203000
+DTEND;TZID=America/New_York:20270210T220000
+SUMMARY:Book of Thoth Book Club #15 (pp. 128-136)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 128-136\n\nThe Magus\n\nZoom: https://us06web.zo
+ om.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 
+ 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-16@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270217T203000
+DTEND;TZID=America/New_York:20270217T220000
+SUMMARY:Book of Thoth Book Club #16 (pp. 136-144)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 136-144\n\nLust\n\nZoom: https://us06web.zoom.us
+ /j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 
+ 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-17@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270224T203000
+DTEND;TZID=America/New_York:20270224T220000
+SUMMARY:Book of Thoth Book Club #17 (pp. 149-155)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 149-155\n\nPart Three: The Court Cards\nIII.\nGe
+ neral Remarks\nGeneral Characteristics of the Four Dignitaries\nSummarized
+  Descriptions of the Sixteen Court Cards\nKnight of Wands\nQueen of Wands\
+ nPrince of Wands\nPrincess of Wands\n\nZoom: https://us06web.zoom.us/j/858
+ 27939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\n
+ Passcode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-18@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270303T203000
+DTEND;TZID=America/New_York:20270303T220000
+SUMMARY:Book of Thoth Book Club #18 (pp. 156-159)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 156-159\n\nKnight of Cups\nQueen of Cups\nPrince
+  of Cups\nPrincess of Cups\n\nZoom: https://us06web.zoom.us/j/85827939250?
+ pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode:
+  418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-19@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270310T203000
+DTEND;TZID=America/New_York:20270310T220000
+SUMMARY:Book of Thoth Book Club #19 (pp. 159-164)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 159-164\n\nKnight of Swords\nQueen of Swords\nPr
+ ince of Swords\nPrincess of Swords\n\nZoom: https://us06web.zoom.us/j/8582
+ 7939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nP
+ asscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-20@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270317T203000
+DTEND;TZID=America/New_York:20270317T220000
+SUMMARY:Book of Thoth Book Club #20 (pp. 164-171)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 164-171\n\nKnight of Disks\nQueen of Disks\nPrin
+ ce of Disks\nPrincess of Disks\n\nZoom: https://us06web.zoom.us/j/85827939
+ 250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793 9250\nPassc
+ ode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-21@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270324T203000
+DTEND;TZID=America/New_York:20270324T220000
+SUMMARY:Book of Thoth Book Club #21 (pp. 177-188)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 177-188\n\nPart IV\nThe Small Cards\n\nZoom: htt
+ ps://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nM
+ eeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-22@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270331T203000
+DTEND;TZID=America/New_York:20270331T220000
+SUMMARY:Book of Thoth Book Club #22 (pp. 188-195)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 188-195\n\nThe Root of the Powers of Fire (Wands
+ )\n\nZoom: https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvF
+ kUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-23@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270407T203000
+DTEND;TZID=America/New_York:20270407T220000
+SUMMARY:Book of Thoth Book Club #23 (pp. 195-202)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 195-202\n\nThe Root of the Powers of Water (Cups
+ )\n\nZoom: https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvF
+ kUL38GBfk.1\nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-24@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270414T203000
+DTEND;TZID=America/New_York:20270414T220000
+SUMMARY:Book of Thoth Book Club #24 (pp. 202-209)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 202-209\n\nSwords\n\nZoom: https://us06web.zoom.
+ us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 279
+ 3 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-25@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270505T203000
+DTEND;TZID=America/New_York:20270505T220000
+SUMMARY:Book of Thoth Book Club #25 (pp. 209-218)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 209-218\n\nDiscs\n\nZoom: https://us06web.zoom.u
+ s/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\nMeeting ID: 858 2793
+  9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:thoth-bookclub-26@bookclub.local
+DTSTAMP:20261019T205200Z
+DTSTART;TZID=America/New_York:20270512T203000
+DTEND;TZID=America/New_York:20270512T220000
+SUMMARY:Book of Thoth Book Club #26 (pp. 249-260)
+LOCATION:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL
+ 38GBfk.1
+URL:https://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBf
+ k.1
+DESCRIPTION:Reading: pages 249-260\n\nThe Behaviour of the Tarot\n\nZoom: h
+ ttps://us06web.zoom.us/j/85827939250?pwd=77PUTYDqa5F0ba2ODJRvFkUL38GBfk.1\
+ nMeeting ID: 858 2793 9250\nPasscode: 418
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Book Club starts in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
